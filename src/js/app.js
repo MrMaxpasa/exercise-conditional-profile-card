@@ -33,9 +33,17 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1>
+            ${variables.name || "Pato"} 
+            ${variables.lastName || "Goma"}
+          </h1>
+          <h2>
+            ${variables.role || "Nadar"}
+          </h2>
+          <h3>
+            ${variables.city ? variables.city : "Patolandia"}
+            ${variables.country ? ", " + variables.country : "bañoso"}
+          </h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
@@ -54,9 +62,11 @@ window.onload = function() {
     // if includeCover is true the algorithm should show the cover image
     includeCover: true,
     // this is the image's url that will be used as a background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://external-preview.redd.it/1lEIJCea1cvlXHk54ZTcQBjNhDc02aka7azgrC_1d3g.jpg?auto=webp&s=ccd1f2392dbc38d408e081a7ea0329ba7c793d84",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://i8.cloudfable.net/styles/550x550/591.289/Black/duckie-amante-del-pato-elijo-laiolencia-de-goma-sudadera-mujer-20250506135131-fp0gkqxl-s7.jpg",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
