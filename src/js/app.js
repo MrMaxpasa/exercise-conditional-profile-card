@@ -44,12 +44,45 @@ function render(variables = {}) {
             ${variables.city ? variables.city : "Patolandia"}
             ${variables.country ? ", " + variables.country : "bañoso"}
           </h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
-          </ul>
+          <ul class="${variables.socialMediaPosition || "position-left"}">
+        ${
+          variables.twitter
+            ? `<li>
+                 <a href="https://twitter.com/${variables.twitter}">
+                   <i class="fab fa-twitter"></i>
+                 </a>
+               </li>`
+            : ""
+        }
+        ${
+          variables.github
+            ? `<li>
+                 <a href="https://github.com/${variables.github}">
+                   <i class="fab fa-github"></i>
+                 </a>
+               </li>`
+            : ""
+        }
+        ${
+          variables.linkedin
+            ? `<li>
+                 <a href="https://linkedin.com/in/${variables.linkedin}">
+                   <i class="fab fa-linkedin"></i>
+                 </a>
+               </li>`
+            : ""
+        }
+        ${
+          variables.instagram
+            ? `<li>
+                 <a href="https://instagram.com/${variables.instagram}">
+                   <i class="fab fa-instagram"></i>
+                 </a>
+               </li>`
+            : ""
+        }
+      </ul>
+          
         </div>
     `;
 }
